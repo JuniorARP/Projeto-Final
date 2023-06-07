@@ -1,7 +1,11 @@
-<p>
-  Work: <span id="work-time">{{ workDuration }} minutes left</span>
-</p>
-<p>
-  Break: <span id="break-time">{{ breakDuration }} minutes left</span>
-</p>
-<h1>11111111111111111111</h1>
+<div>
+  <h2>Pomodoro Timer</h2>
+  <p>Tempo restante: {{ formatTime() }}</p>
+  <div>
+    <label for="cycles">Número de Ciclos:</label>
+    <input type="number" id="cycles" [(ngModel)]="cycles" min="1" step="1" />
+    <button (click)="startTimer()" [disabled]="timerRunning">Iniciar</button>
+    <button (click)="pauseTimer()" [disabled]="!timerRunning">Pausar</button>
+    <button (click)="resetTimer()">Reiniciar</button>
+  </div>
+</div>
